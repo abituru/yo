@@ -600,11 +600,33 @@ Kenalin nih Owner aku @${ow.split("@")[0]}
 
 exports.supportme = (player, numbernye, dev, hahh) => { 
 	return `*${hahh} @${player.split("@")[0]}*
-◪ *SUPPORT ME*
-├ *Youtube:* ${myyoutube}
-├ *GitHub:* ${github}
-├ *Tiktok:* ${mytiktok}
-├ *Twitter:* ${mytwitter}
+~ *HOT PROMO 22-31 DESEMBER* ~
+
+List Sewa Bot Harian:
+1.) 1 Hari =S&K (Free)
+2.) 2 Hari =S&K (Free)
+3.) 3 Hari =S&K (Free)
+
+*Tidak berbayar (Free)*
+
+List Sewa Bot Mingguan:
+1.) 1 Minggu =1k
+2.) 2 Minggu =3k
+3.) 3 Minggu =5k
+4.) 4 Minggu =7k
+
+*Pembayaran hanya Via Dana*
+
+List Sewa Bot Bulanan:
+1.) 1 Bulan =8k
+2.) 2 Bulan =10k
+3.) 3 Bulan =13k
+4.) 4 Bulan =15K
+
+*Pembayaran hanya Via Dana dan Pulsa*
+
+List Permanen Bot:
+25k -> Dana-Shoope-Pulsa
 *Support Nekopoi.care*
 *Official Bot By @${numbernye.split("@")[0]}*
 *Powered By @${dev.split("@")[0]}*`}
@@ -647,16 +669,13 @@ Peraturan: 19 Juli 2021
 *Powered By @${dev.split("@")[0]}*`}
 
 exports.gcofficial = (player, hahh) => { 
-	return `Silahkan join Group Official Luc Bot,sekedar senang-senang dan mengetahui Update terbaru Dari Bot
+	return `Silahkan join Group Official Null Bot,sekedar senang-senang dan mengetahui Update terbaru Dari Bot
 
 Group 1
-https://chat.whatsapp.com/ItWuInyvxDs1mDHUVV5xM8
+https://chat.whatsapp.com/KgJeF62iqHq1OCUVmlgvUp
 
 Group 2
-https://chat.whatsapp.com/CBGSIU5bKPi8NFPG532ZUE
-
-Group 3
-https://chat.whatsapp.com/CXPjrQPrn6mCU8EOnhvoSG
+https://chat.whatsapp.com/Hl4KQuVJrZP0OtBmcdF9CV
 
 *Jika ada informasi penting mengenai bot atau semacamnya kemungkinan akan di share di group.*
 *Support Nekopoi.care*
@@ -664,25 +683,33 @@ https://chat.whatsapp.com/CXPjrQPrn6mCU8EOnhvoSG
 *Powered By @${dev.split("@")[0]}*`}
 
 exports.premiumbot = (player, hahh) => { 
-	return `Premium
-Dapatkan akses premium
-Unlimited limit
-Github/sc bot
-1. Fitur play atau downloader youtube up to 90mb
-2. Unlimited limit (limit tidak terpakai)
-3. Memasukkan bot ke 2 group (30 Hari)
-4. Jadibot (dapatkan sc Luc Bot[harap tidak di sebar])
-5. Event berhadiah
+	return `~ *HOT PROMO 22-31 DESEMBER* ~
 
-Jika kamu ada saran fitur bisa langsung di kasih tau ke owner.
-Terimakasih >~<
--Siegrin
-Silahkan klik pada "List Harga" untuk melihat list.
-Pembayaran:
-├ *Trakteer:* ${trakteer}
-├ *Saweria:* ${saweria}
-├ *Dana,Ovo,Gopay:* ${donasi}
-├ *Rekening:* ${rekening}
+List Sewa Bot Harian:
+1.) 1 Hari =S&K (Free)
+2.) 2 Hari =S&K (Free)
+3.) 3 Hari =S&K (Free)
+
+*Tidak berbayar (Free)*
+
+List Sewa Bot Mingguan:
+1.) 1 Minggu =1k
+2.) 2 Minggu =3k
+3.) 3 Minggu =5k
+4.) 4 Minggu =7k
+
+*Pembayaran hanya Via Dana*
+
+List Sewa Bot Bulanan:
+1.) 1 Bulan =8k
+2.) 2 Bulan =10k
+3.) 3 Bulan =13k
+4.) 4 Bulan =15K
+
+*Pembayaran hanya Via Dana dan Pulsa*
+
+List Permanen Bot:
+25k -> Dana-Shoope-Pulsa
 *Support Nekopoi.care*
 *Official Bot By @${numbernye.split("@")[0]}*
 *Powered By @${dev.split("@")[0]}*`}

@@ -98,8 +98,8 @@ const starts = async (client = new WAConnection()) => {
 			lucacaa = { key: {fromMe: false,participant: "0@s.whatsapp.net",
 		remoteJid: "0@s.whatsapp.net"},
 message: {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us",
-"inviteCode": "mememteeeekkeke","groupName": "☢LUC SYSTEM☢", 
-"caption": `☢LUC SYSTEM☢`, 'jpegThumbnail': fs.readFileSync(`./strg/image/logolucbot.jpeg`)
+"inviteCode": "mememteeeekkeke","groupName": "☢NULLSYSTEM☢", 
+"caption": `☢NULLSYSTEM☢`, 'jpegThumbnail': fs.readFileSync(`./strg/image/logolucbot.jpeg`)
 }}}
          const mdata = await client.groupMetadata(anu.jid)
 		console.log(anu)
@@ -176,7 +176,7 @@ client.on('group-update', async (anu) => {
 	if (!welkom.includes(anu.jid)) return
 		try {
 lucacaa = { key: {fromMe: false,participant: "0@s.whatsapp.net",
-remoteJid: "0@s.whatsapp.net"},message: {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "mememteeeekkeke","groupName": "☢LUC SYSTEM☢", "caption": `☢LUC SYSTEM☢`, 'jpegThumbnail': fs.readFileSync(`./strg/image/logolucbot.jpeg`)}}}
+remoteJid: "0@s.whatsapp.net"},message: {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "mememteeeekkeke","groupName": "☢NULLSYSTEM☢", "caption": `☢NULLSYSTEM☢`, 'jpegThumbnail': fs.readFileSync(`./strg/image/logolucbot.jpeg`)}}}
   metdata = await client.groupMetadata(anu.jid)
     if(anu.announce == 'false'){
     teks = `「 *Group Opened* 」\n\n_Group telah dibuka oleh admin_\n_Sekarang semua member bisa mengirim pesan_`

@@ -126,6 +126,7 @@ linknye = `${deflt}`
 owner = setting.owner
 dev = setting.dev 
 ow = setting.ow 
+numbernye = setting.numbernye 
 github = setting.github 
 myyoutube = setting.myyoutube
 mytiktok = setting.mytiktok
@@ -149,33 +150,38 @@ ator = setting.ator
 fake = setting.fake
 prefix = setting.prefix 
 multi = true 
-banChats = false
-menusimple = true
+banChats = true
 pref = '?' 
 
 // Gak Usah Diubah
 hit_today = []
 blocked = []
 offline = false
-numbernye = '0'
+numbernye = '62895410650067'
 waktu = '-'
 alasan = '-'
 ownername = 'Siegrin'
 msgId="B826873620DD5947E683E3ABE663F263"
 const vcard = 'BEGIN:VCARD\n'  
 + 'VERSION:3.0\n'  
-+ 'FN:SIEGRIN\n'  
-+ 'ORG: LUC BOT;\n' 
-+ 'TEL;type=CELL;type=VOICE;waid=6289530298948:+6289530298948\n'
++ 'FN:Owner Null\n'  
++ 'ORG: Null Bot;\n' 
++ 'TEL;type=CELL;type=VOICE;waid=62895410650067:+62895410650067\n'
++ 'END:VCARD' 
+const vcardev = 'BEGIN:VCARD\n'  
++ 'VERSION:3.0\n'  
++ 'FN:Owner Siegrin\n'  
++ 'ORG: Luc Bot;\n' 
++ 'TEL;type=CELL;type=VOICE;waid=62895410650067:+62895410650067\n'
 + 'END:VCARD' 
 
 const X = "❌" 
 const O = "⭕️" 
 const tunjuk = "👈" 
-winawal = 1 // Win Tictactoe ( luc bot APIs )
-loseawal = 1 // Lose Tictactoe ( luc bot APIs )
-memberwin = 1 // Win ( luc bot APIs )
-memberlose = 1 // Lose ( luc bot APIs )
+winawal = 1 // Win Tictactoe ( Null Bot APIs )
+loseawal = 1 // Lose Tictactoe ( Null Bot APIs )
+memberwin = 1 // Win ( Null Bot APIs )
+memberlose = 1 // Lose ( Null Bot APIs )
 
 const { setTtt, getWins, getWin, getLose, generateBoard } = require('./lib/bot/tictactoe.js')
 
@@ -260,7 +266,7 @@ const groupDesc = isGroup ? groupMetadata.desc : ''
 const groupOwner = isGroup ? groupMetadata.owner : ''
 const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 const isWelkom = isGroup ? welkom.includes(from) : false
-const isOwner = own.includes(sender)
+const isOwner = own.includes(sender) || mek.key.fromMe
 const isAdmin = adm.includes(sender)
 const isBanned = blocked.includes(sender)
 const isPremium = prem.includes(sender) || isOwner
@@ -272,13 +278,12 @@ const senderNumber = sender.split("@")[0]
 const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 const isGroupAdmins = groupAdmins.includes(sender) || false
 const player = `${sender.split("@")[0]}@s.whatsapp.net`
-const numbernye = `0@s.whatsapp.net`
+const numbernye = `62895410650067@s.whatsapp.net`
 const isBtMsg = (type == 'buttonsResponseMessage') ? mek.message.buttonsResponseMessage.selectedButtonId : ''
 const isStMsg = (type == 'listResponseMessage') ? mek.message.listResponseMessage.title : ''
 const lucBulan = ['Bulan','Tahun','Hari','Minggu','Jam','Detik','Menit','Abad']
 const lucBulan1 = lucBulan[Math.floor(Math.random() * (lucBulan.length))]
 const date1 = Math.ceil(Math.random() * 100)
-const ratee = Math.ceil(Math.random() * 1000)
 const point = Math.floor(Math.random() * 1) + 0
 const luchit = hit_today.length
 const fakereply = fakereplynye[Math.floor(Math.random() * fakereplynye.length)];
@@ -426,13 +431,13 @@ const fakeitem = (teks) => {
         key:{
         	fromMe:false,
         participant:`0@s.whatsapp.net`, ...(from ? {
-remoteJid :"6289530298948-1604595598@g.us" }: {})
-                    },message:{"orderMessage":{"orderId":"174238614569481","thumbnail":Mthumb,"itemCount":`${ratee}`,"status":"INQUIRY","surface":"CATALOG","message":fake,"token":"AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA=="}}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true})}
+remoteJid :"62895410650067-1604595598@g.us" }: {})
+                    },message:{"orderMessage":{"orderId":"174238614569481","thumbnail":Mthumb,"itemCount":`${date1}`,"status":"INQUIRY","surface":"CATALOG","message":fake,"token":"AR6xBKbXZn0Xwmu76Ksyd7rnxI+Rx87HfinVlW4lwXa6JA=="}}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true})}
 
 const ftoko = {
 key: {
 			fromMe: false,
-			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289530298948-1604595598@g.us" } : {})
+			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "62895410650067-1604595598@g.us" } : {})
 		},
 		message: {
 			"productMessage": {
@@ -489,7 +494,7 @@ const fakegroup = (teks) => {
                 quoted: {
                     key: {
                         fromMe: false,
-                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289530298948-1604595598@g.us" } : {})
+                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "62895410650067-1604595598@g.us" } : {})
                     },
                     message: {
                         "imageMessage": {
@@ -535,7 +540,7 @@ const fakegroup = (teks) => {
                         }
 	}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
 	
-const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289530298948-1604595598@g.us"  }, "message": {orderMessage: {itemCount: `${ratee}`,status: 200, thumbnail: Mthumb, surface: 200, message: fake, orderTitle: 'L', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "62895410650067-1604595598@g.us"  }, "message": {orderMessage: {itemCount: `${date1}`,status: 200, thumbnail: Mthumb, surface: 200, message: fake, orderTitle: 'L', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
 const fdoc = {key :  {participant : '0@s.whatsapp.net'},message: {documentMessage:{title: fake,jpegThumbnail: Mthumb}}}
 const fvn = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":99999,"ptt": "true"}} } 
 const fgif = {key: {participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {})},message: {"videoMessage": { "title":fake, "h": `Hmm`,'seconds': '99999', 'gifPlayback': 'true', 'caption': fake, 'jpegThumbnail': Mthumb}}}
@@ -660,7 +665,7 @@ options
 };
 
 const daftar1 = `_Kamu Belum Verifikasi Data_`
-const daftar2 = 'Klik Tombol Di Bawah Untuk Verifikasi'
+const daftar2 = `Klik Tombol Di Bawah Untuk Verifikasi\nTombolnya gak muncul ketik aja #daftar\n*Support Nekopoi.Care*\n*Offical Bot By @${numbernye.split("@")[0]}*\n*Powered By @${dev.split("@")[0]}*`
 const daftar3 = [{buttonId: `daftar`,buttonText: {displayText: `VERIFIKASI`,},type: 1,},]
 
 let contentimage = fs.readFileSync(`./strg/image/${thumbnail}.jpeg`)
@@ -1265,12 +1270,21 @@ fs.unlinkSync("./temp/" + from + ".json");
 //========================================================================================================================//
 
 //antispam
-        if (isCmd && !isOwner && !mek.key.fromMe && msgFilter.isFiltered(from) && !isGroup) {
+        if (isCmd && !isOwner && msgFilter.isFiltered(from) && !isGroup) {
         console.log(color('[SPAM]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
         return
         }
-        if (isCmd && !isOwner && !mek.key.fromMe && msgFilter.isFiltered(from) && isGroup) {
+        if (isCmd && !isOwner && msgFilter.isFiltered(from) && isGroup) {
         console.log(color('[SPAM]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(groupName))
+        return
+        }
+//antispam button
+        if (isStMsg && !isOwner && msgFilter.isFiltered(from) && !isGroup) {
+        console.log(color('[SPAM BUTON]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
+        return
+        }
+        if (isStMsg && !isOwner && msgFilter.isFiltered(from) && isGroup) {
+        console.log(color('[SPAM BUTON]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(groupName))
         return
         }
 		//detector media
@@ -1372,7 +1386,7 @@ if (isRegistered) return  reply(ind.rediregis())
 }
 switch (isBtMsg) {
 case 'lucjodoh':
-                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
                 if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup,silahkan gunakan di private chat bot')
 				if (isBanned) return reply(ind.baned())
 				if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -1401,8 +1415,8 @@ break
 switch (isStMsg) {
 case 'Owner Menu':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 const ownerrows1 = [
 {title: 'Self', description: "Bot Hanya Digunakan Owner", rowId:"self"},
 {title: 'Public', description: "Bot Bisa Digunakan Semua Orang", rowId:"public"},
@@ -1416,21 +1430,21 @@ const ownerrows1 = [
 {title: 'UnPin', description: "Pesan Tidak Disematkan", rowId:"rowid10"},
 {title: 'Archive', description: "Pesan Diarsipkan", rowId:"rowid11"},
 {title: 'UnArchive', description: "Pesan Tidak Diarsipkan", rowId:"rowid12"},
-{title: 'Delete Chat', description: "Pesan Dihapus", rowId:"rowid13"},
+{title: 'Delete Pc', description: "Pesan Dihapus", rowId:"rowid13"},
 {title: 'Kick All', description: "Bot Keluarkan Semua Member Group", rowId:"rowid14"},
 {title: 'Leave', description: "Bot Keluar Group", rowId:"rowid15"},
 {title: 'Buggc', description: "Bot Mengirim Buggc", rowId:"rowid16"},
 {title: 'Virtex', description: "Bot Mengirim Virtex", rowId:"rowid17"},
 {title: 'List Group', description: "Bot Menampilkan List Group", rowId:"rowid18"},
-{title: 'OnRespn', description: "Bot Respon On", rowId:"rowid19"},
-{title: 'OffRespon', description: "Bot Respon Off", rowId:"rowid20"},
+{title: 'Respn On', description: "Bot Respon On", rowId:"rowid19"},
+{title: 'Respn off', description: "Bot Respon Off", rowId:"rowid20"},
  ]
 const sectionsowner1 = [
 {title: "OWNER MENU", rows: ownerrows1}
 ]
 
 const buttonowner = {
- buttonText: 'Click Me!',
+ buttonText: 'Hai Sayangku',
  footerText: ind.menuowner(prefix, dev, numbernye),
  description: `*${hahh} @${player.split("@")[0]}*\n*Bot ini di lengkapi Anti-Spam jadi beri jeda 5 detik*`, 
  sections: sectionsowner1,
@@ -1438,9 +1452,213 @@ const buttonowner = {
 }
 client.sendMessage(from, buttonowner, MessageType.listMessage, {quoted: ftroli, contextInfo:{mentionedJid: [player, numbernye, ow, dev], "externalAdReply":{"title": `${hahh} Owner Tersayang`,"body": `${fakereply}`,"previewType": "PHOTO","thumbnailUrl": ` `,"thumbnail": WMthumb,"sourceUrl": `${mybio}`}}})
 break
+case 'Self':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+if (banChats === true) return fakeitem(`\`\`\`ALREADY SELF\`\`\``)
+banChats = true
+fakeitem(`\`\`\`STATUS : SELF\`\`\``)
+break
+case 'Public':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+if (banChats === false) return fakeitem(`\`\`\`ALREADY PUBLIC\`\`\``)
+banChats = false
+fakeitem(`\`\`\`STATUS : PUBLIC\`\`\``)
+break
+case 'Shutdown':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb()) 
+fakeitem(`\`\`\`BYE BEBAN...\nLUC OFF DULU\`\`\``)
+await sleep(3000)
+client.close()
+break
+case 'Leave':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isGroup) return reply(ind.groupo())
+if (!isOwner) return reply(ind.ownerb())
+setTimeout( () => {
+client.groupLeave (from) 
+}, 2000)
+setTimeout( () => {
+client.updatePresence(from, Presence.composing) 
+fakeitem(`\`\`\`SAYONARA CUK🗣🗣\`\`\``)  // ur cods
+}, 0)
+break
+case 'Respon Off':
+if (isBanned) return reply(ind.baned())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
+if (offline === false) return fakeitem(`\`\`\`RESPON ALREADY OFF\`\`\``)
+offline = false
+fakeitem(`\`\`\`AUTO RESPON OFF\`\`\``)
+break       
+case 'Respon On':
+if (isBanned) return reply(ind.baned())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isOwner && !isAdmin) return reply(ind.ownerb()) 
+if (offline === true) return fakeitem(`\`\`\`RESPON ALREADY ON\`\`\``)
+offline = true
+fakeitem(`\`\`\`AUTO RESPON ON\`\`\``)
+break	
+case 'List Group':
+if (isBanned) return reply(ind.baned())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})	
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
+ingfoo = await getGroup(totalchat)
+teks1 = `*L I S T  G R O U P*\nJumlah Grup: ${ingfoo.length}\n\n`
+for (let i = 0; i < ingfoo.length; i++){
+teks1 += `• Nama grup : ${ingfoo[i].subject}\n• ID grup : ${ingfoo[i].id}\n• Dibuat : ${moment(`${ingfoo[i].creation}` * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n• Jumlah Peserta : ${ingfoo[i].participants.length}\n\n`
+}
+fakeitem(teks1)
+break 
+case 'Kick All':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isGroup) return reply(ind.groupo())
+if (!isOwner) return reply(ind.ownerb())
+members_id = []
+teks = (args.length > 1) ? body.slice(8).trim() : ''
+teks += '\n\n'
+for (let mem of groupMembers) {
+teks += `*😘* ${mem.jid.split('@')[0]}\n`
+members_id.push(mem.jid)
+}
+mentions(teks, members_id, true)
+client.groupRemove(from, members_id)
+break
+case 'Virtex':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+client.sendMessage(from, virtex1(prefix, sender), text, {quoted: troli})
+break
+case 'Buggc':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+await client.toggleDisappearingMessages(from)
+fakeitem("yahaha")
+break		
+case 'Read All':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+ var chats = await client.chats.all()
+chats.map( async ({ jid }) => {
+await client.chatRead(jid)
+})
+ teks = `\`\`\`SUCCES READALL ${chats.length} CHAT !\`\`\``
+ await client.sendMessage(from, teks, MessageType.text, {quoted: ftroli})
+ console.log(chats.length)
+break
+case 'Mute':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+client.modifyChat(from, ChatModification.mute, 24*60*60*1000)
+fakeitem(`\`\`\`SUCCES MUTE CHAT !\`\`\``)
+console.log('succes mute chat = ' + from)
+break
+ case 'Unmute':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+client.modifyChat(from, ChatModification.unmute)
+ fakeitem(`\`\`\`SUCCES UNMUTE CHAT !\`\`\``)
+console.log('succes unmute chat = ' + from)
+break
+case 'Unpin':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+client.modifyChat(from, ChatModification.unpin)
+ fakeitem(`\`\`\`SUCCES UNPIN CHAT !\`\`\``)
+console.log('unpin chat = ' + from)
+break	   	
+ case 'Pin':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+client.modifyChat(from, ChatModification.pin)
+ fakeitem(`\`\`\`SUCCES PIN CHAT !\`\`\``)
+console.log('pinned chat = ' + from)
+break
+ case 'Unread All':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+var chats = await client.chats.all()
+chats.map( async ({ jid }) => {
+await client.chatRead(jid, 'unread')
+})
+var teks = `\`\`\`SUCCES UNREADALL ${chats.length} CHAT !\`\`\``
+await client.sendMessage(from, teks, text, {quoted: ftroli})
+console.log(chats.length)
+break
+case 'UnArchive':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+fakeitem(`\`\`\`SUCCES UNARCHIVE CHAT !\`\`\``)
+console.log('succes unarchive chat = ' + from)
+anu = await client.chats.all()
+for (let _ of anu) {
+client.modifyChat(_.jid, ChatModification.unarchive)
+}
+break
+case 'Archive':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+fakeitem(`\`\`\`SUCCES ARCHIVE CHAT !\`\`\``)
+console.log('succes archive chat = ' + from)
+await sleep(3000)
+client.modifyChat(from, ChatModification.archive)
+break
+case 'Delete Pc':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+fakeitem(`\`\`\`SUCCES DELETE CHAT !\`\`\``)
+console.log('succes delete chat = ' + from)
+await sleep(4000)
+client.modifyChat(from, ChatModification.delete)
+break	
+case 'Clear All':  
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (isBanned) return reply(ind.baned())
+if (!isOwner) return reply(ind.ownerb())
+anu = await client.chats.all()
+client.setMaxListeners(99)
+for (let _ of anu) {
+client.modifyChat(_.jid, ChatModification.delete)
+}
+fakeitem(`\`\`\`SUCCES CLEAR ALL CHAT !\`\`\``)
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 case 'Info Menu':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 const inforows1 = [
 {title: 'test', description: "Bot Hanya Digunakan Owner", rowId:"self"}
  ]
@@ -1459,7 +1677,7 @@ client.sendMessage(from, buttoninfo1, MessageType.listMessage, {quoted: ftroli, 
 break
 case 'Gabut Menu':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 const gabutrows1 = [
 {title: 'test', description: "test", rowId:"self"}
  ]
@@ -1478,7 +1696,7 @@ client.sendMessage(from, buttongabut1, MessageType.listMessage, {quoted: ftroli,
 break
 case 'Game Menu':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 const gamerows1 = [
 {title: 'Owner', description: "test", rowId:"self"}
  ]
@@ -1495,14 +1713,14 @@ const buttongame1 = {
 }
 client.sendMessage(from, buttongame1, MessageType.listMessage, {quoted: ftroli, contextInfo:{mentionedJid: [player, numbernye, ow, dev], "externalAdReply":{"title": `${hahh} Owner Tersayang`,"body": `${fakereply}`,"previewType": "PHOTO","thumbnailUrl": ` `,"thumbnail": WMthumb,"sourceUrl": `${mybio}`}}})
 break
-case 'Luc Menu':
+case 'Null Menu':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 const lucrows1 = [
 {title: 'test', description: "test", rowId:"self"}
  ]
 const sectionsluc1 = [
-{title: "Luc Menu", rows: lucrows1}
+{title: "Null Menu", rows: lucrows1}
 ]
 
 const buttonluct1 = {
@@ -1516,7 +1734,7 @@ client.sendMessage(from, buttonluct1, MessageType.listMessage, {quoted: ftroli, 
 break
 case 'Group Menu':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 const grouprows1 = [
 {title: 'test', description: "Bot Hanya Digunakan Owner", rowId:"self"}
  ]
@@ -1533,53 +1751,53 @@ const buttongroup1 = {
 }
 client.sendMessage(from, buttongroup1, MessageType.listMessage, {quoted: ftroli, contextInfo:{mentionedJid: [player, numbernye, ow, dev], "externalAdReply":{"title": `${hahh} Owner Tersayang`,"body": `${fakereply}`,"previewType": "PHOTO","thumbnailUrl": ` `,"thumbnail": WMthumb,"sourceUrl": `${mybio}`}}})
 break
-case 'Developer Bot':
 case 'Owner Bot':
-case 'Contributor':
 case 'Owner':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+case 'Developer Bot':
+case 'Contributor':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: fdoc})
-client.sendMessage(from, ind.supportme(player, numbernye, dev, hahh),MessageType.text, { quoted: fdoc, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}} ) 
+sendButtonImage(from, `*${hahh} @${player.split("@")[0]}*`, ind.gcofficial(player, hahh, dev, numbernye), buttonsmenu2, { quoted: mek, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}})
 break
 case 'Source Code':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 sendButtonImage(from, `Source Script Bot : ${github}`, buttonsmenu1, buttonsmenu2, { quoted: fdoc,contextInfo:{mentionedJid: [player, numbernye, ow, dev]}} ) 
 break
 case 'Syarat Dan Peraturan':
 case 'Rules':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 sendButtonImage(from, `*${hahh} @${player.split("@")[0]}*`, ind.rules(player, hahh, dev, numbernye), buttonsmenu2, { quoted: mek, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}})
 break
-case 'Group Official Luc Bot':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+case 'Group Official Null Bot':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 sendButtonImage(from, `*${hahh} @${player.split("@")[0]}*`, ind.gcofficial(player, hahh, dev, numbernye), buttonsmenu2, { quoted: mek, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}})
 break
 case 'Join':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (args.length < 1) return reply('ketik #join link group')
 break
 case 'Sticker':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (args.length < 1) return reply(`Kirim gambar dengan caption ${prefix}sticker atau reply/tag gambar(durasi sticker video 1-9 detik)`)
 break
 case 'Menu':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 const rowsmenu1 = [
-{title: 'Developer Bot', description: "Nomor Developer Luc Bot", rowId:"#OwnerMenu"},
+{title: 'Developer Bot', description: "Nomor Developer Null Bot", rowId:"#OwnerMenu"},
 {title: 'Syarat Dan Peraturan', description: "Budayakan Membaca Sebelum Menggunakan Bot", rowId:"#OwnerMenu"},
-{title: 'Group Official Luc Bot', description: "Silahkan Bergabung Untuk Info Updatean Terbaru", rowId:"#OwnerMenu"}
+{title: 'Group Official Null Bot', description: "Silahkan Bergabung Untuk Info Updatean Terbaru", rowId:"#OwnerMenu"}
 ]
 const rowsmenu2 = [
-{title: 'Luc Menu', description: "Menampilkan fitur dari Luc", rowId:"LucMenu"}
+{title: 'Null Menu', description: "Menampilkan fitur dari Luc", rowId:"LucMenu"}
 ]
 const rowsmenu3 = [
 {title: 'Gabut Menu', description: "Untuk Hiburan Di Group", rowId:"GabutMenu"}
@@ -1605,7 +1823,7 @@ const rowsmenu6 = [
 
 const sectionsmenus = [
 {title: "Tentang Bot", rows: rowsmenu1},
-{title: "Luc Menu", rows: rowsmenu2},
+{title: "Null Menu", rows: rowsmenu2},
 {title: "Gabut Menu", rows: rowsmenu3},
 {title: "Game Menu", rows: rowsmenu9},
 {title: "Group Menu", rows: rowsmenu4},
@@ -1636,7 +1854,7 @@ client.sendMessage(from, buttonsmenus, MessageType.listMessage, {
 break
 case 'Sewa':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 const sewamenu1 = [
 {title: 'Premium', description: `Rp.100.000\nDapatkan Fitur Premium`, rowId:"Premium"}
 ]
@@ -1655,11 +1873,15 @@ const sewamenu5 = [
 const sewamenu6 = [
 {title: 'Rules', description: "Budayakan Membaca Sebelum Menggunakan Bot", rowId:"SourceCode"}
 ]
+const sewamenu7 = [
+{title: 'Jadi Bot', description: "`Rp.25.000\nSewa Bot Selama 1 Bulan", rowId:"JadiBot"}
+]
 
 const sectionssewas = [
 {title: "Premium", rows: sewamenu1},
 {title: "Sewa 1 Bulan", rows: sewamenu2},
 {title: "Sewa 1 Minggu", rows: sewamenu3},
+{title: "Jadi Bot", rows: sewamenu7},
 {title: "Trial", rows: sewamenu4},
 {title: "Owner", rows: sewamenu5},
 {title: "Rules", rows: sewamenu6}
@@ -1685,7 +1907,7 @@ client.sendMessage(from, buttonssewaas, MessageType.listMessage, {
 			})
 break
 case 'BotStat':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())	
 anu = process.uptime()
 teks = `*◪* *MY STATS*
@@ -1730,20 +1952,21 @@ case 'Premium':
 case '1 Bulan':
 case '1 Minggu':
 case 'Trial':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+case 'Jadi Bot':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-sendButtonImage(from, "Silahkan Hubungin Owner Luc Bot Untuk Informasi Lebih Lanjut", buttonsmenu1, buttonsmenu3, { quoted: mek, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}})
+sendButtonImage(from, "Silahkan Hubungin Owner Null Bot Untuk Informasi Lebih Lanjut", buttonsmenu1, buttonsmenu3, { quoted: mek, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}})
 break
 break
 }
 switch (command) { 
 case 'rules':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 sendButtonImage(from, ind.rules(player, hahh, dev, numbernye), buttonsmenu1, buttonsmenu2, { quoted: mek, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}})
 break
 case 'gcbot':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 sendButtonImage(from, `*${hahh} @${player.split("@")[0]}*`, ind.gcofficial(player, hahh, dev, numbernye), buttonsmenu2, { quoted: mek, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}})
 break
@@ -1753,11 +1976,11 @@ case 'bot':
 case 'help':
 case 'menu':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 const rowsmenus1 = [
-{title: 'Menu', description: "Menampilkan List Menu/Command yang Terdapat di Luc Bot", rowId:"LucMenu"}
+{title: 'Menu', description: "Menampilkan List Menu/Command yang Terdapat di Null Bot", rowId:"LucMenu"}
 ]
 const rowsmenus2 = [
 {title: 'Rules', description: "Budayakan Membaca Sebelum Menggunakan Bot", rowId:"rules"},
@@ -1775,7 +1998,7 @@ const rowsmenus4 = [
 ]
 
 const sectionsmenuss = [
-{title: "Menu Luc Bot", rows: rowsmenus1},
+{title: "Menu Null Bot", rows: rowsmenus1},
 {title: "Informasi Bot", rows: rowsmenus2},
 {title: "Command yang Sering di Gunakan", rows: rowsmenus3},
 {title: "Big Thanks To", rows: rowsmenus4}
@@ -1783,7 +2006,7 @@ const sectionsmenuss = [
 
 const buttonsmenuss = {
  buttonText: 'Click Me!',
- footerText: `Saya adalah Luc Bot salah satu Bot Whatsapp yang diciptakan oleh manusia gabut : @${dev.split("@")[0]}\nSilahkan tekan Tombol "Click Me!" untuk melihat list command dari Luc Bot.\n\nDiharapkan untuk tidak menelpon ke nomor ini,tidak mintak save dan tidak spam dalam penggunaan bot.\nThanks Regard @${dev.split("@")[0]}`,
+ footerText: `Saya adalah Null Bot salah satu Bot Whatsapp yang diciptakan oleh manusia gabut : @${dev.split("@")[0]}\nSilahkan tekan Tombol "Click Me!" untuk melihat list command dari Null Bot.\n\nDiharapkan untuk tidak menelpon ke nomor ini,tidak mintak save dan tidak spam dalam penggunaan bot.\nThanks Regard @${dev.split("@")[0]}`,
  description: `*${hahh} @${player.split("@")[0]}*`, 
  sections: sectionsmenuss,
  listType: 1
@@ -1803,7 +2026,7 @@ break
 	 case 'next':
 			case 'mutual':
 				case 'mutualan':
-                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
                 if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup,silahkan gunakan di private chat bot')
 				if (isBanned) return reply(ind.baned())
 				if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -1817,7 +2040,7 @@ break
             break
 	 case 'wa.me':
 		           case 'wame':
-                       if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+                       if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 				       if (isBanned) return reply(ind.baned())
   				   	   client.updatePresence(from, Presence.composing) 
   					   options = {
@@ -1842,7 +2065,7 @@ break
 		    break  
 				case 'leaderboard':
 				case 'lb':
-				if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+				if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 				if (!isGroup) return reply(ind.groupo())
 				if (isBanned) return reply(ind.baned())
 				_level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
@@ -1865,7 +2088,7 @@ break
 				break
 case 'fitnah2':
 				if (isBanned) return reply(ind.baned())
-                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
                 if (!isGroup) return reply(ind.groupo())
                 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 				if (args.length < 1) return reply(`Usage :\n${prefix}fitnah [@tag/pesan/balasanbot]]\n\nEx : \n${prefix}fitnah @tagmember/hai/hai juga`)
@@ -1879,7 +2102,7 @@ case 'fitnah2':
 			break
 			case 'fitnah':
                 if (isBanned) return reply(ind.baned())
-                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
                 if (!isGroup) return reply(ind.groupo())
                 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
                 if (args.length < 1) return reply(`Usage :\n${prefix}fitnah pesan|balasanbot]]\n\nEx : \n${prefix}${command} terkutuk lah|bacot`)
@@ -1892,7 +2115,7 @@ case 'fitnah2':
 			  break
 			
 				case 'level':
-                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+                if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 				if (isBanned) return reply(ind.baned())
                 if (!isGroup) return reply(ind.groupo())
 				if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -1929,12 +2152,12 @@ case 'delete':
 case 'del':
 case 'd':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isPremium && !isOwner) return reply(ind.premo())
 client.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 break   
 case 'self':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())
 if (banChats === true) return fakeitem(`\`\`\`ALREADY SELF\`\`\``)
@@ -1942,7 +2165,7 @@ banChats = true
 fakeitem(`\`\`\`STATUS : SELF\`\`\``)
 break
 case 'public':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())
 if (banChats === false) return fakeitem(`\`\`\`ALREADY PUBLIC\`\`\``)
@@ -1950,7 +2173,7 @@ banChats = false
 fakeitem(`\`\`\`STATUS : PUBLIC\`\`\``)
 break
 case 'shutdown':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb()) 
 fakeitem(`\`\`\`BYE BEBAN...\nLUC OFF DULU\`\`\``)
@@ -1958,10 +2181,10 @@ await sleep(3000)
 client.close()
 break
 case 'leave':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 setTimeout( () => {
 client.groupLeave (from) 
 }, 2000)
@@ -1972,24 +2195,24 @@ fakeitem(`\`\`\`SAYONARA CUK🗣🗣\`\`\``)  // ur cods
 break
 case 'offrespon':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (offline === false) return fakeitem(`\`\`\`RESPON ALREADY OFF\`\`\``)
 offline = false
 fakeitem(`\`\`\`AUTO RESPON OFF\`\`\``)
 break       
 case 'onrespon':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb()) 
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isOwner && !isAdmin) return reply(ind.ownerb()) 
 if (offline === true) return fakeitem(`\`\`\`RESPON ALREADY ON\`\`\``)
 offline = true
 fakeitem(`\`\`\`AUTO RESPON ON\`\`\``)
 break
 case 'bc': 
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isOwner) return reply(ind.ownerb())
 if (args.length < 0) return reply('.......')
 anu = await client.chats.all()
 if (isMedia && !mek.message.videoMessage || isQuotedImage) {
@@ -2035,9 +2258,9 @@ fakeitem('```SUKSESS BROADCAST```')
 }
 break
 case 'spam':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 if (args.length < 1) return reply(`Penggunaan ${prefix}spam teks|jumlahspam`)
 argzi = arg.split("|")
 if (!argzi) return reply(`Penggunaan ${prefix}spam teks|jumlah`)
@@ -2047,9 +2270,9 @@ client.sendMessage(from, argzi[0], MessageType.text)
 }
 break 
 case 'totag':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin)return reply(ind.ownerb())
+if (!isOwner && !isAdmin)return reply(ind.ownerb())
 if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
 encmedia = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 file = await client.downloadAndSaveMediaMessage(encmedia, filename = getRandom())
@@ -2126,9 +2349,9 @@ reply(`reply gambar/sticker/audio/video dengan caption ${prefix}totag`)
 }
 break 
 case 'setlink':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin)return reply(ind.ownerb())	
+if (!isOwner && !isAdmin)return reply(ind.ownerb())	
 if (args[0] === "com") {
 linknye = `${linkcom}`
 fakeitem('Succes change antilink com')
@@ -2161,17 +2384,17 @@ reply(`◪ *List Anti Link*
 }
 break
 case 'setnamebot':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin)return reply(ind.ownerb())	
-if (!q) return reply(`Example: ${prefix}${command} LUC BOT`)
+if (!isOwner && !isAdmin)return reply(ind.ownerb())	
+if (!q) return reply(`Example: ${prefix}${command} Null Bot`)
 fake = q
 fakeitem(`Succes Mengganti Nama Bot Menjadi : ${q}`)
 break
 case 'setprefix':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (args.length < 1) return reply(`Example:\n•> ${prefix}setprefix multi\n•> ${prefix}setprefix <query>`)
 if (args[0] === 'multi') {
 if (multi === true) return
@@ -2184,12 +2407,12 @@ fakeitem(`Succes change prefix = ${args[0]}`)
 }
 break	
 case 'term':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin)return reply(ind.ownerb())	
+if (!isOwner && !isAdmin)return reply(ind.ownerb())	
 if (!q) return reply(ind.wrongf())
 exec(q, (err, stdout) => {
-if (err) return reply(`LUC BOT:~ ${err}`)
+if (err) return reply(`Null Bot:~ ${err}`)
 if (stdout) {
 fakeitem(stdout)
 }
@@ -2197,17 +2420,17 @@ fakeitem(stdout)
 break 
 case 'upswteks':
 case 'upswtext':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (!q) return reply('Isi teksnya!')
 client.sendMessage('status@broadcast', `${q}`, extendedText)
 fakestatus(`Sukses Up story wea teks ${q}`)
 break 
 case 'upswimage':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (isQuotedImage) {
 const swsw = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 cihcih = await client.downloadMediaMessage(swsw)
@@ -2219,9 +2442,9 @@ reply('Reply gambarnya!')
 }
 break 
 case 'upswvideo':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (isQuotedVideo) {
 const swsw = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 cihcih = await client.downloadMediaMessage(swsw)
@@ -2233,9 +2456,9 @@ reply('Reply videonya!')
 }
 break
 case 'get':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin)return reply(ind.ownerb())	
+if (!isOwner && !isAdmin)return reply(ind.ownerb())	
 if(!q) return reply('linknya?')
 fetch(`${args[0]}`).then(res => res.text())  
 .then(bu =>{
@@ -2244,8 +2467,8 @@ fakeitem(bu)
 break 
 case 'listgroup':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})	
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})	
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 ingfoo = await getGroup(totalchat)
 teks1 = `*L I S T  G R O U P*\nJumlah Grup: ${ingfoo.length}\n\n`
 for (let i = 0; i < ingfoo.length; i++){
@@ -2255,10 +2478,10 @@ fakeitem(teks1)
 break 
 //********** KUDETA SISTEM **********
 case 'kickall':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 members_id = []
 teks = (args.length > 1) ? body.slice(8).trim() : ''
 teks += '\n\n'
@@ -2270,22 +2493,22 @@ mentions(teks, members_id, true)
 client.groupRemove(from, members_id)
 break
 case 'virtex':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 client.sendMessage(from, virtex1(prefix, sender), text, {quoted: troli})
 break
 case 'buggc':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 await client.toggleDisappearingMessages(from)
 fakeitem("yahaha")
 break
 //********** ADD SISTEM **********
-case 'addrespon':if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+case 'addrespon':if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (args.length < 1) return reply(`Penggunaan ${prefix}addrespon key|respon\n\nContoh : ${prefix}addrespon hai|juga`)
 let input1 = body.slice(11)
 if (!input1.includes('|')) return reply(`Penggunaan ${prefix}addrespon key|respon\n\nContoh : ${prefix}addrespon hai|juga`)
@@ -2295,9 +2518,9 @@ addCommands(input[0], input[1], sender, commandsrespon)
 fakeitem(`Key : ${input[0]}\nRespon : ${input[1]}\n\nRespon berhasil di set`)
 break
 case 'delrespon':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (args.length < 1) return reply(`Penggunaan ${prefix}delrespon key\n\nContoh : ${prefix}delrespon hai`)
 if (!checkCommands(body.slice(11), commandsrespon)) return reply(`Key tersebut tidak ada di database`)
 deleteCommands(body.slice(11), commandsrespon)
@@ -2306,9 +2529,9 @@ break;
 case 'addcmd': 
 case 'setcmd':
 case 'addcmd':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (isQuotedSticker) {
 if (!q) return reply(`Example : ${command} cmdnya dan tag stickernya`)
 var kodenya = mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString('base64')
@@ -2319,9 +2542,9 @@ reply(`Example : ${command} cmdnya dan tag stickernya`)
 }
 break
 case 'delcmd':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 if (!isQuotedSticker) return reply(`Example : ${command} tag stickernya`)
 var kodenya = mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString('base64')
  scommand.splice(getCommandPosition(kodenya), 1)
@@ -2329,9 +2552,9 @@ fs.writeFileSync('./database/bot/scommand.json', JSON.stringify(scommand))
 fakeitem(`Succes delete sticker cmd`)
 break
 case 'addadmin': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb()) 
+if (!isOwner && !isAdmin) return reply(ind.ownerb()) 
 if (args.length < 1) return reply(`Example:${prefix}${command} nomor atau tag`)
 const admmbot = `${args[0].replace("@", '')}@s.whatsapp.net`
 adm.push(`${args[0].replace("@",'')}@s.whatsapp.net`)
@@ -2339,9 +2562,9 @@ fs.writeFileSync('./database/user/admin.json', JSON.stringify(adm))
 client.sendMessage(from, `Selamat @${args[0].replace("@", '')} Naik Jabatan Menjadi Admin ${fake}`, text, {quoted:ftoko, contextInfo: {mentionedJid: [admmbot]}})
 break
 case 'deladmin':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb()) 
+if (!isOwner && !isAdmin) return reply(ind.ownerb()) 
 if (args.length < 1) return reply(`Example:${prefix}${command} nomor atau tag`)
 const delmmbot = `${args[0].replace("@", '')}@s.whatsapp.net`
 var arr = adm
@@ -2353,9 +2576,9 @@ fs.writeFileSync('./database/user/admin.json',JSON.stringify(arr))}}
 client.sendMessage(from, `Maaf @${args[0].replace("@", '')} Turun Jabatan Menjadi Babu ${fake}`, text, {quoted:ftoko, contextInfo: {mentionedJid: [delmmbot]}})
 break
 case 'addowner':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb()) 
+if (!isOwner && !isAdmin) return reply(ind.ownerb()) 
 if (args.length < 1) return reply(`Example:${prefix}${command} nomor atau tag`)
 const ownbot = `${args[0].replace("@", '')}@s.whatsapp.net`
 own.push(`${args[0].replace("@", '')}@s.whatsapp.net`)
@@ -2363,9 +2586,9 @@ fs.writeFileSync('./database/user/owner.json', JSON.stringify(own))
 client.sendMessage(from, `Selamat @${args[0].replace("@", '')} Naik Jabatan Menjadi Owner ${fake}`, text, {quoted:ftoko, contextInfo: {mentionedJid: [ownbot]}})
 break
 case 'delowner':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb()) 
+if (!isOwner && !isAdmin) return reply(ind.ownerb()) 
 if (args.length < 1) return reply(`Example:${prefix}${command} nomor atau tag`)
 const delownbot = `${args[0].replace("@", '')}@s.whatsapp.net`
 var arr = own
@@ -2377,7 +2600,7 @@ fs.writeFileSync('./database/user/owner.json',JSON.stringify(arr))}}
 client.sendMessage(from, `Maaf @${args[0].replace("@", '')} Turun Jabatan Menjadi Babu ${fake} Atas`, text, {quoted:ftoko, contextInfo: {mentionedJid: [delownbot]}})
 break
 case 'addpremium':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())  
 if (args.length < 1) return reply(`Example:${prefix}${command} nomor atau tag`)
@@ -2387,7 +2610,7 @@ fs.writeFileSync('./database/user/premium.json', JSON.stringify(prem))
 client.sendMessage(from, `Selamat @${args[0].replace("@", '')} Naik Jabatan Menjadi User Pemium ${fake}`, text, {quoted:ftoko, contextInfo: {mentionedJid: [addpremiumbot]}})
 break
 case 'delpremium':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())  
 if (args.length < 1) return reply(`Example:${prefix}${command} nomor atau tag`)
@@ -2401,9 +2624,9 @@ fs.writeFileSync('./database/user/premium.json',JSON.stringify(arr))}}
 client.sendMessage(from, `Maaf @${args[0].replace("@", '')} Turun Jabatan Menjadi Babu ${fake} Atas`, text, {quoted:ftoko, contextInfo: {mentionedJid: [delpremiumbot]}})
 break
 case 'addblock':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb()) 
+if (!isOwner && !isAdmin) return reply(ind.ownerb()) 
 if (args.length < 1) return reply(`Example:${prefix}${command} nomor atau tag`)
 client.updatePresence(from, Presence.composing) 
 const blockbot = `${args[0].replace("@", '')}@s.whatsapp.net`
@@ -2412,9 +2635,9 @@ blocked.push(`${args[0].replace("@", '')}@s.whatsapp.net`)
 client.sendMessage(from, `Maaf @${args[0].replace("@", '')} Telah Di Banned Untuk Menggunakan ${fake}`, text, {quoted:ftoko, contextInfo: {mentionedJid: [blockbot]}})
 break
 case 'delblock':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb()) 
+if (!isOwner && !isAdmin) return reply(ind.ownerb()) 
 if (args.length < 1) return reply(`Example:${prefix}${command} nomor atau tag`)
  client.updatePresence(from, Presence.composing) 
 const unblockbot = `${args[0].replace("@", '')}@s.whatsapp.net`
@@ -2427,7 +2650,7 @@ client.blockUser(`${args[0].replace("@", '')}@c.us`, "remove")
 client.sendMessage(from, `Maaf @${args[0].replace("@", '')} Telah Di Banned Untuk Menggunakan ${fake}`, text, {quoted:ftoko, contextInfo: {mentionedJid: [unblockbot]}})
 break
 case 'addbadword':  
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())  
 if (args.length < 1) return reply( `Ketik ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword tolol`)
@@ -2437,7 +2660,7 @@ fs.writeFileSync('./database/group/bad.json', JSON.stringify(bad))
 fakeitem(`Sukses Menambahkan *${bw}* Bad Word!`)
 break
  case 'delbadword':  // Fix Bug By Luc
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())  
  if (args.length < 1) return reply( `Ketik ${prefix}addbadword [kata kasar]. contoh ${prefix+command} tolol`)
@@ -2451,7 +2674,7 @@ fs.writeFileSync('./database/group/bad.json',JSON.stringify(arr))}}
 fakeitem(`Sukses Menghapus *${bwd}* Bad Word!`)
   break
 case 'addsticker':  // Fix Bug By Luc
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())  
 if (!isQuotedSticker) return reply('Reply stiker nya')
@@ -2465,7 +2688,7 @@ fs.writeFileSync(`./strg/stik.json`, JSON.stringify(setiker))
 fakeitem(`\`\`\`Sukses Menambahkan Sticker\nCek Dengan Cara ${prefix}liststicker\`\`\``)
 break
 case 'addvn':  // Fix Bug By LUCBOT & LUC
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())  
 if (!isQuotedAudio) return reply('Reply vnnya blokk!')
@@ -2480,7 +2703,7 @@ fakeitem(`\`\`\`Sukses Menambahkan VN\nCek Dengan Cara ${prefix}listvn\`\`\``)
 break
 case 'addimg':
 case 'addimage':  // Fix Bug By Luc
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())  
 if (!isQuotedImage) return reply('Reply imagenya blokk!')
@@ -2494,7 +2717,7 @@ fs.writeFileSync('./strg/image.json', JSON.stringify(imagenye))
 fakeitem(`\`\`\`Sukses Menambahkan Image\nCek Dengan Cara ${prefix}listimage\`\`\``)
 break
 case 'addvideo':  // Fix Bug By Luc
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isOwner) return reply(ind.ownerb())  
 if (!isQuotedVideo) return reply('Reply videonya blokk!')
@@ -2510,9 +2733,9 @@ break
 
 //********** SETTING SISTEM **********
 case 'setppbot':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 client.updatePresence(from, Presence.composing) 
 if (!isQuotedImage) return reply(`Kirim gambar dengan caption ${prefix}setppbot atau tag gambar yang sudah dikirim`)
 enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -2521,9 +2744,9 @@ await client.updateProfilePicture(botNumber, media)
 fakeitem(`\`\`\`FOTO PROFILE BERHASIL DI PERBARUI\`\`\``)
 break 			
 case 'readall':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
  var chats = await client.chats.all()
 chats.map( async ({ jid }) => {
 await client.chatRead(jid)
@@ -2533,41 +2756,41 @@ await client.chatRead(jid)
  console.log(chats.length)
 break
 case 'mute':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 client.modifyChat(from, ChatModification.mute, 24*60*60*1000)
 fakeitem(`\`\`\`SUCCES MUTE CHAT !\`\`\``)
 console.log('succes mute chat = ' + from)
 break
  case 'unmute':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 client.modifyChat(from, ChatModification.unmute)
  fakeitem(`\`\`\`SUCCES UNMUTE CHAT !\`\`\``)
 console.log('succes unmute chat = ' + from)
 break
 case 'unpin':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 client.modifyChat(from, ChatModification.unpin)
  fakeitem(`\`\`\`SUCCES UNPIN CHAT !\`\`\``)
 console.log('unpin chat = ' + from)
 break	   	
  case 'pin':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 client.modifyChat(from, ChatModification.pin)
  fakeitem(`\`\`\`SUCCES PIN CHAT !\`\`\``)
 console.log('pinned chat = ' + from)
 break
  case 'unreadall':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 var chats = await client.chats.all()
 chats.map( async ({ jid }) => {
 await client.chatRead(jid, 'unread')
@@ -2577,9 +2800,9 @@ await client.sendMessage(from, teks, text, {quoted: ftroli})
 console.log(chats.length)
 break
 case 'unarchive':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 fakeitem(`\`\`\`SUCCES UNARCHIVE CHAT !\`\`\``)
 console.log('succes unarchive chat = ' + from)
 anu = await client.chats.all()
@@ -2588,27 +2811,27 @@ client.modifyChat(_.jid, ChatModification.unarchive)
 }
 break
 case 'archive':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 fakeitem(`\`\`\`SUCCES ARCHIVE CHAT !\`\`\``)
 console.log('succes archive chat = ' + from)
 await sleep(3000)
 client.modifyChat(from, ChatModification.archive)
 break
-case 'deleteChat':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+case 'delpc':
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 fakeitem(`\`\`\`SUCCES DELETE CHAT !\`\`\``)
 console.log('succes delete chat = ' + from)
 await sleep(4000)
 client.modifyChat(from, ChatModification.delete)
 break	
 case 'clearall':  
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!mek.key.fromMe && !isOwner) return reply(ind.ownerb())
+if (!isOwner) return reply(ind.ownerb())
 anu = await client.chats.all()
 client.setMaxListeners(99)
 for (let _ of anu) {
@@ -2618,7 +2841,7 @@ fakeitem(`\`\`\`SUCCES CLEAR ALL CHAT !\`\`\``)
 break
 //********** GROUP SETTING *********
 case 'antilink':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2643,7 +2866,7 @@ reply(`\`\`\`ketik ${prefix}${command} on atau ${prefix}${command} off \`\`\``)
 await confirmLIMIT(sender, [angka])
 break
 case 'event':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2667,7 +2890,7 @@ reply(`\`\`\`ketik ${prefix}${command} on atau ${prefix}${command} off \`\`\``)
 await confirmLIMIT(sender, [angka])
 break 
 case 'welcome':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2691,7 +2914,7 @@ reply(`\`\`\`ketik ${prefix}${command} on atau ${prefix}${command} off \`\`\``)
 await confirmLIMIT(sender, [angka])
 break 
 case 'antivirtex': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2715,7 +2938,7 @@ reply(`\`\`\`ketik ${prefix}${command} on atau ${prefix}${command} off \`\`\``)
 await confirmLIMIT(sender, [angka])
 break	
 case 'nobadword': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2741,7 +2964,7 @@ await confirmLIMIT(sender, [angka])
 break
 case 'gc':
 case 'group':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2760,7 +2983,7 @@ reply(`\`\`\`ketik ${prefix}${command} tutup atau ${prefix}${command} buka \`\`\
 await confirmLIMIT(sender, [angka])
 break     
 case 'revoke':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2772,7 +2995,7 @@ fakegroup(`\`\`\`SUCCES REVOKE LINK GROUP\`\`\``)
 await confirmLIMIT(sender, [angka])
 break
 case 'add':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2793,7 +3016,7 @@ reply(`can't add number, looks like it's private`)
 await confirmLIMIT(sender, [angka])
 break
 case 'kick':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2820,7 +3043,7 @@ client.groupRemove(from, [entah])
 await confirmLIMIT(sender, [angka])
 break
 case 'demote':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2835,7 +3058,7 @@ client.sendMessage(from, teks, text, {quoted:mek, contextInfo:{mentionedJid:[men
 await confirmLIMIT(sender, [angka])
 break
 case 'promote':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
@@ -2853,7 +3076,7 @@ break
 case 'listadmin':
 case 'adminlist':
 case 'admin':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isGroupAdmins && !isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.admin())
@@ -2868,7 +3091,7 @@ mentions(teks, groupAdmins, true)
 await confirmLIMIT(sender, [angka])
 break		
 case 'groupinfo':            
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -2880,7 +3103,7 @@ await confirmLIMIT(sender, [angka])
 break
 case 'listonline':
 case 'here':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (!isGroupAdmins && !isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.admin())
@@ -2895,7 +3118,7 @@ await confirmLIMIT(sender, [angka])
 break
 case 'linkgrup':
 case 'linkgc':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
 if (!isGroupAdmins && !isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.admin())
@@ -2907,7 +3130,7 @@ await confirmLIMIT(sender, [angka])
 break
 case 'setppgrup': 
 case 'setppgroup': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (isBanned) return reply(ind.baned())
 if (!isGroupAdmins && !isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.admin())
@@ -2919,7 +3142,7 @@ client.sendMessage(from, '「  SUKSES  」 Mengubah Profile Grup', text, { quote
 await confirmLIMIT(sender, [angka])
 break		
 case 'setnamegrup':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
 if (!isGroupAdmins && !isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.admin())
@@ -2929,7 +3152,7 @@ client.sendMessage(from, '「  SUKSES  」 Mengubah Nama Grup', text, { quoted: 
 await confirmLIMIT(sender, [angka])
 break 
 case 'setdesc':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
 if (!isGroupAdmins && !isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.admin())
@@ -2939,7 +3162,7 @@ client.sendMessage(from, '*「  SUKSES  」 Mengubah Desk Grup', text, { quoted:
 await confirmLIMIT(sender, [angka])
 break   
 case 'tutuptime': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
 if (!isPremium && !isOwner) return reply(ind.premo())
@@ -2962,7 +3185,7 @@ reply(close)
 await confirmLIMIT(sender, [angka])
 break
 case 'bukatime': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (!isBotGroupAdmins) return reply(ind.badmin())
 if (!isPremium && !isOwner) return reply(ind.premo())
@@ -2985,10 +3208,9 @@ reply(open)
 await confirmLIMIT(sender, [angka])
 break
 case 'tagall':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
-if (!isPremium && !isOwner) return reply(ind.premo())
 if (!isOwner && !mek.key.fromMe && !isAdmin && !isGroupAdmins)return reply(ind.admin())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 members_id = []
@@ -3004,10 +3226,9 @@ break
 case 'hidetag':
 case '_`':
 case '.':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
-if (!isPremium && !isOwner) return reply(ind.premo())
 if (!isOwner && !mek.key.fromMe && !isAdmin && !isGroupAdmins)return reply(ind.admin())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 var value = args.join(' ')
@@ -3027,19 +3248,19 @@ client.sendMessage(from, optionshidetag, text, { quoted: { key: { fromMe: false,
 break
 //********** INFO MENU **********
 case 'bahasa':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 client.sendMessage(from, ind.bahasa(), text, { quoted:fdoc })
 break 
 case 'donasi':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 client.sendMessage(from, ind.donasi(prefix, player, ow, trakteer, saweria, donasi, rekening),MessageType.text, { quoted: fdoc, contextInfo:{mentionedJid: [player, ow]}} ) 
 break
 case 'request':
 case 'laporan':
 case 'bugreport':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (args.length < 1) return reply('ketik permintaan kamu')
 const cfrr = body.slice(8)
@@ -3050,11 +3271,11 @@ var options = {
 text: ress,
 contextInfo: {mentionedJid: [nomor]},
 }
-client.sendMessage('6289530298948@s.whatsapp.net', options, text, {quoted: fdoc, contextInfo :{sendEphemeral: true, mentionedJid: [player, dev]}})
+client.sendMessage('62895410650067@s.whatsapp.net', options, text, {quoted: fdoc, contextInfo :{sendEphemeral: true, mentionedJid: [player, dev]}})
 reply(`*REQUEST ANDA TELAH SAMPAI KE OWNER @${dev.split("@")[0]}*\nPesan : ${cfrr}\n*Requests palsu atau main² tidak akan ditanggapi.*`)
 break
 case 'join':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) reply(ind.linkga())
 if (!q) return reply('Linknya?')
@@ -3065,12 +3286,12 @@ var options = {
 text: ressrr,
 contextInfo: {mentionedJid: [nomor]},
 }
-client.sendMessage('6289530298948@s.whatsapp.net', options, text, {quoted: fdoc, contextInfo :{sendEphemeral: true, mentionedJid: [player, dev]}})
+client.sendMessage('62895410650067@s.whatsapp.net', options, text, {quoted: fdoc, contextInfo :{sendEphemeral: true, mentionedJid: [player, dev]}})
 reply(`*REQUEST ANDA TELAH SAMPAI KE OWNER @${dev.split("@")[0]}*\nPesan : ${cfrrr}\n*Requests palsu atau main² tidak akan ditanggapi.*`)
 break
 case 'profile':
 case 'profil':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 client.updatePresence(from, Presence.composing)
@@ -3086,7 +3307,7 @@ break
 case 'ownerlist':
 case 'listowner':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})  
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})  
 client.updatePresence(from, Presence.composing)
 teks = '*OWNWER BOT LIST* :\n'
 for (let ownn of own) {
@@ -3098,11 +3319,11 @@ break
 case 'adminbotlist':
 case 'listadminbot':
 case 'adminbot':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 client.updatePresence(from, Presence.composing) 
 //Case By Luc
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 teks = '*ADMIN BOT LIST* :\n'
 for (let admm of adm) {
 teks += `├❏@${admm.split('@')[0]}\n`
@@ -3111,7 +3332,7 @@ teks += `└ ❏ *Total:* ${adm.length}`
 client.sendMessage(from, teks.trim(), extendedText, {quoted:fdoc, contextInfo: {"mentionedJid": adm}})
 break
 case 'blocklist': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 client.updatePresence(from, Presence.composing) 
 teks = '*BLOCKLIST:*\n'
@@ -3124,10 +3345,10 @@ break
 case 'premiumlist':
 case 'listpremium':
 case 'premium':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 client.updatePresence(from, Presence.composing) 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 teks = '*PREMIUM LIST* :\n'
 for (let premm of prem) {
 teks += `┣❒ @${premm.split('@')[0]}\n`
@@ -3139,7 +3360,7 @@ case 'listbadword':
 case 'badword':
 case 'badwordlist':
 case 'badwordlist':// Fix Bug By Luc
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 let lbw = `*BAD WORD LIST*\n*Total* : ${bad.length}\n`
@@ -3151,7 +3372,7 @@ break
 case 'listcmd':
 case 'stcmd':
 case 'stcmdlist':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 let teksnyee = `*LIST STICKER CMD*`
 let cemde = [];
@@ -3162,7 +3383,7 @@ teksnyee += `\n\n*•> ID :* ${i.id}\n*•> Cmd :* ${i.chats}`
 reply(teksnyee)
 break
 case 'listrespon':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 let teksnyeee = `*LIST RESPON CMD*`
 let rcemde = [];
@@ -3178,7 +3399,7 @@ case 'liststc':
 case 'stikerlist':
 case 'stickerlist':
 case 'stclist':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 teks = '*Sticker list :*\n\n'
 for (let awokwkwk of setiker) {
@@ -3189,7 +3410,7 @@ client.sendMessage(from, teks.trim(), extendedText, { quoted: fdoc, contextInfo:
 break
 case 'videolist':
 case 'listvideo':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 teks = '*List Video :*\n\n'
 for (let awokwkwk of videonye) {
@@ -3201,7 +3422,7 @@ break
 case 'listimage':
 case 'imagelist':
 case 'listimg':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 teks = '*List Image :*\n\n'
 for (let awokwkwk of imagenye) {
@@ -3212,7 +3433,7 @@ client.sendMessage(from, teks.trim(), extendedText, { quoted: fdoc, contextInfo:
 break
 case 'listvn':
 case 'vnlist':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 teks = '*List Vn:*\n\n'
 for (let awokwkwk of audionye) {
@@ -3222,22 +3443,22 @@ teks += `└ ❏ *Total : ${audionye.length}*\n\n_Untuk mengambil sticker silahk
 client.sendMessage(from, teks.trim(), extendedText, { quoted: fdoc, contextInfo: { "mentionedJid": audionye } })
 break
 case 'imunevirtex':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})  
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})  
 if (isBanned) return reply(ind.baned()) 
  await reply(antivirtexx(), text, {quoted : mek}, `Buset Dahh Etekel🔥`)
 break
 case 'owner':
 case 'creator':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: fdoc})
-client.sendMessage(from, `Support\nYoutube:${myyoutube}\nGitHub:${github}\nTiktok:${mytiktok}\nTwitter:${mytwitter} `,MessageType.text, { quoted: fdoc} )  
+sendButtonImage(from, `*${hahh} @${player.split("@")[0]}*`, ind.gcofficial(player, hahh, dev, numbernye), buttonsmenu2, { quoted: mek, contextInfo:{mentionedJid: [player, numbernye, ow, dev]}})
 break
 case 'sc':
 case 'scbot':
 case 'source':
 case 'sourcecode':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 client.sendMessage(from, `Source Script Bot : ${github}`, MessageType.text, { quoted: fdoc} )  
 break
@@ -3245,7 +3466,7 @@ case 'mystatus':
 case 'status':
 case 'mystat':
 case 'botstat':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())	
 anu = process.uptime()
 fkhs = sender
@@ -3294,7 +3515,7 @@ case 'sahabatan':
 case 'musuhan':
 case 'pacaran':
 case 'kangen':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3323,7 +3544,7 @@ case 'termalas':
 case 'gakguna':
 case 'sangean':
 case 'bokepers':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3337,7 +3558,7 @@ mentions(teks, jds, true, {quoted : mek})
 await confirmLIMIT(sender, [angka])
 break
 case 'watak':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3349,7 +3570,7 @@ client.sendMessage(from, 'Jawaban : '+ tak, text, { quoted: mek })
  await confirmLIMIT(sender, [angka])
 break 
 case 'hobby':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3379,7 +3600,7 @@ case 'bebancek':
 case 'pintarcek':
 case 'begocek': 
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply(`Contoh : ${prefix}${command} ${pushname}`)
@@ -3390,7 +3611,7 @@ case 'bisakah':
 case 'bagaimanakah':
 case 'apakah':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply(`Contoh : ${prefix}${command} pertanyaan kamu`)
@@ -3403,7 +3624,7 @@ break
 case 'kapankah':
 case 'kapan':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply(`Contoh : ${prefix}${command} pertanyaan kamu`)
@@ -3411,7 +3632,7 @@ client.sendMessage(from, `Jawaban : ${date1} ${lucBulan1} lagi `, text, { quoted
 await confirmLIMIT(sender, [angka])
 break
 case 'suit':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3430,9 +3651,8 @@ await confirmLIMIT(sender, [angka])
 break
 //MINIGAME LUCMENU
 case 'caklontong':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
-if (!isEvent) return reply(ind.evento())
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 data = fs.readFileSync('./src/minigameluc/caklontong.js');
@@ -3457,7 +3677,7 @@ client.sendMessage(from, Pertanyaan, text, {quoted: mek})
 await confirmLIMIT(sender, [angka])
 break
 case 'tebakgambar':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3484,9 +3704,8 @@ client.sendMessage(from, randSoal, image, { caption: '_Jelaskan Apa Maksud Gamba
 await confirmLIMIT(sender, [angka])
 break
 case 'family100':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isGroup) return reply(ind.groupo())
-if (!isEvent) return reply(ind.evento())
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 data = fs.readFileSync('./src/minigameluc/family100.js');
@@ -3514,9 +3733,8 @@ client.sendMessage(from, '*'+ Pertanyaan +'*', text, {quoted: mek }) // ur cods
 }, 0) // 1000 = 1s,
 await confirmLIMIT(sender, [angka])
 case 'delsesi':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isEvent) return reply(ind.evento())
 if (!isGroup) return reply(ind.groupo())
 if (!isGroupAdmins && !mek.key.fromMe && !isOwner && !isAdmin) return reply('Hanya bisa didelete oleh admin group dan owner bot')
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3536,9 +3754,8 @@ await confirmLIMIT(sender, [angka])
 break
 case 'tictactoe':
 case 'ttt':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isEvent) return reply(ind.evento())
 if (!isGroup) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (mek.message.extendedTextMessage.contextInfo.mentionedJid > 1) return reply('Hanya bisa dengan 1 orang')
@@ -3555,9 +3772,8 @@ client.sendMessage(from, starGame, text, {quoted: mek, contextInfo: { mentionedJ
  await confirmLIMIT(sender, [angka])
 break
 case 'cekhistory':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isEvent) return reply(ind.evento())
 if (!isGroup) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 client.sendMessage(from, starGame, text, `\`\`\`「 Status Tictactoe 」\`\`\`\n•> Win : ${checkWin(sender)}\n•> Lose : ${checkLose(sender)}`, {quoted: mek})
@@ -3568,7 +3784,7 @@ break
 case 'getsticker':
 case 'getstiker':
 case 'gets': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup && !isOwner) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3579,7 +3795,7 @@ client.sendMessage(from, result, sticker, {quoted :mek})
 await confirmLIMIT(sender, [angka])
 break
 case 'getimage': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup && !isOwner) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3591,7 +3807,7 @@ client.sendMessage(from, buffer, image, { quoted: mek, thumbnail: Buffer.alloc(0
 await confirmLIMIT(sender, [angka])
 break
 case 'getvideo': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup && !isOwner) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3602,7 +3818,7 @@ client.sendMessage(from, buffer, video, { mimetype: 'video/mp4', quoted: mek })
 await confirmLIMIT(sender, [angka])
 break
 case 'getvn': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup && !isOwner) return reply(ind.groupo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -3613,7 +3829,7 @@ client.sendMessage(from, buffer, audio, { mimetype: 'audio/mp4', quoted: mek, pt
 await confirmLIMIT(sender, [angka])
 break
 case 'getbio':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if (!isGroup) return reply(ind.groupo())
 if (args.length < 1) return reply('tag orangnya')
@@ -3625,7 +3841,7 @@ reply("Status Profile Not Found", {quoted : mek})
 }
 break
 case 'getpic':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply('tag orangnya')
@@ -3660,7 +3876,7 @@ break*/
 */
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++		
-//LUC MENU
+//Null Menu
 //CONVERT AUIO//
 case 'zalgo':
 if (!isRegistered) return reply( ind.noregis())
@@ -3683,7 +3899,6 @@ break
 case 'tourl':
 if (!isRegistered) return reply( ind.noregis())
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !isOwner) return reply(ind.premo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
 boij = isQuotedImage || isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -3698,7 +3913,6 @@ break
 case 'detikvn':
 if (!isRegistered) return reply( ind.noregis())
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !isOwner) return reply(ind.premo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())				
 if (!isQuotedAudio) return reply('Reply audionya')
 if (args.length < 1) return reply('Masukan Detik')
@@ -3713,7 +3927,6 @@ break
 case 'detikvideo':
 if (!isRegistered) return reply( ind.noregis())
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !isOwner) return reply(ind.premo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedVideo) return reply('Reply videonya')
 if (args.length < 1) return reply('Masukan Detik')
@@ -3728,7 +3941,6 @@ break
 case 'volume':
 if (!isRegistered) return reply( ind.noregis())
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !isOwner) return reply(ind.premo())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio) return reply('Reply audio!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -3745,7 +3957,7 @@ await confirmLIMIT(sender, [angka])
 break           
 case 'say':
 teks = body.slice(5)
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply(`Contoh : ${prefix}${command} ${pushname}`)
@@ -3755,7 +3967,7 @@ client.sendMessage(from, saying, text)
 await confirmLIMIT(sender, [angka])
 break
 case 'fdeface':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 ge = args.join('')           
@@ -3784,7 +3996,7 @@ client.sendMessage(from, mat, MessageType.extendedText, anu)
 await confirmLIMIT(sender, [angka])
 break     
 case 'tts':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return client.sendMessage(from, `Kode bahasanya mana gan?\n Kalo Gatau Kode Bahasanya Apa Aja Ketik Saja ${prefix}bahasa`, text, {quoted: mek})
@@ -3807,7 +4019,7 @@ fs.unlinkSync(rano)
 await confirmLIMIT(sender, [angka])
 break
 case 'ghost':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3825,7 +4037,7 @@ await confirmLIMIT(sender, [angka])
 break 
 case 'vibra': 
 var req = args.join(' ')
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3842,7 +4054,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'gemes':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3859,7 +4071,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'tempo':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3877,7 +4089,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'nightcore':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3894,7 +4106,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'fast':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3911,7 +4123,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'trigg':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3928,7 +4140,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'slow':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3945,7 +4157,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'bass': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend()) 
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3962,7 +4174,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'gemuk':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3979,7 +4191,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'tupai':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -3996,7 +4208,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'reverse':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -4012,7 +4224,7 @@ fs.unlinkSync(ran)
 })
 break
 case 'toptt':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
@@ -4028,7 +4240,7 @@ client.sendMessage(from, topt, audio, {mimetype: 'audio/mp4', quoted: mek, ptt:t
 await confirmLIMIT(sender, [angka])
 break
 case 'tomp3':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
  if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
@@ -4047,7 +4259,7 @@ await confirmLIMIT(sender, [angka])
 break
 case 'tomp4':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
 ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 owgi =await client.downloadAndSaveMediaMessage(ger)
@@ -4061,10 +4273,10 @@ fs.unlinkSync(owgi)
 break 
 //Case By Luc
 case 'ghostvid':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
@@ -4080,10 +4292,10 @@ await confirmLIMIT(sender, [angka])
 break 
 
 case 'gemesvid':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
  if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
@@ -4099,8 +4311,8 @@ await confirmLIMIT(sender, [angka])
 break
 case 'reversevid':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-if (!isPremium && !isOwner) return reply(ind.premo())
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
  if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
@@ -4115,10 +4327,10 @@ fs.unlinkSync(ran)
 })
 break
 case 'nightcorevid':
- if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+ if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
  if (isBanned) return reply(ind.baned())
  if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
- if (!isPremium && !isOwner) return reply(ind.premo())
+ 
  if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
@@ -4133,11 +4345,11 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'triggvid':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp4')
@@ -4151,11 +4363,11 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'bassvid': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend()) 
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
 ran = getRandom('.mp4')
@@ -4169,10 +4381,10 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'gemukvid':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
@@ -4187,10 +4399,10 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break
 case 'tupaivid':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
@@ -4206,9 +4418,9 @@ await confirmLIMIT(sender, [angka])
 break
 case 'fastvid':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
@@ -4222,10 +4434,10 @@ fs.unlinkSync(ran)
 })
 break
 case 'vibravid':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 var req = args.join(' ')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -4240,10 +4452,10 @@ client.sendMessage(from, hah, video, { mimetype: 'video/mp4', quoted: mek })
 await confirmLIMIT(sender, [angka])
 break
 case 'slowvid':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 media =await client.downloadAndSaveMediaMessage(encmedia)
@@ -4259,10 +4471,10 @@ await confirmLIMIT(sender, [angka])
 break
 case 'tempovid':
 var req = args.join(' ') 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 if (!isQuotedAudio && !isQuotedVideo) return reply('Reply vnnya atau videonya!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 var req = args.join(' ') 
@@ -4283,7 +4495,7 @@ case 'sticker':
 case 'sk':
 case 's':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -4372,11 +4584,11 @@ case 'stikerwm':
 case 'stickerwm':
 case 'swm':
 case 'wm':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!isPremium && !isOwner) return reply(ind.premo())
+
 pe = args.join(' ')
 var a = pe.split("|")[0];
 var b = pe.split("|")[1];
@@ -4465,7 +4677,7 @@ await confirmLIMIT(sender, [angka])
 break   
 case 'ocr': 
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (args.length < 0) return reply(`tag gambarnya lalu ketik ${prefix}${command}`)
 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -4486,7 +4698,7 @@ await confirmLIMIT(sender, [angka])
 break
 case 'toimg':
 if (isBanned) return reply(ind.baned())
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (!isQuotedSticker) return reply('reply/tag sticker!')
 encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 const mediaaa = await client.downloadAndSaveMediaMessage(encmedia)
@@ -4501,7 +4713,7 @@ fs.unlinkSync(ran)
 await confirmLIMIT(sender, [angka])
 break	   
 case 'readmore':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply(`cara menggunakan nya${prefix}‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎${command} Hai beb/an`)
@@ -4512,10 +4724,10 @@ client.sendMessage(from, `${has}‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎
 await confirmLIMIT(sender, [angka])
 break	
  case 'surah':
- if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+ if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
-if (!mek.key.fromMe && !isOwner) return
+if (!isOwner) return
 if (args.length < 1) return reply(`Example :\n${prefix}surah 1`)
 srh = args[0]
 hx.surah(srh).then(res => {
@@ -4530,7 +4742,7 @@ reply(teks)
 await confirmLIMIT(sender, [angka]) 
 break
 case 'playstore':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply(`Example :\n${prefix}playstore termux`)
@@ -4547,7 +4759,7 @@ reply(teks)
 await confirmLIMIT(sender, [angka]) 
 break
 case 'searchgc':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply(`Example :\n${prefix}searchgc Editor Berkelas`)
@@ -4564,7 +4776,7 @@ reply(teks)
 await confirmLIMIT(sender, [angka]) 
 break
 case 'styletext':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 if (args.length < 1) return reply('Enter The Text')
@@ -4588,7 +4800,7 @@ reply(Object.entries(await stylizeText(matext)).map(([name, value]) => `${name}\
 await confirmLIMIT(sender, [angka]) 
 break
 case 'hbd': 
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
 if ( checkLimituser(sender) <= 0) return reply(ind.limitend())
 let textus = args.join(" ")
@@ -4670,7 +4882,7 @@ break
 +++++++++++++++++++++++++++*/           
              case 'fakeloc':
 			 if (isBanned) return reply(ind.baned())
-				if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+				if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
                var kntl = body.slice(8)
 			   var nama = kntl.split("|")[0];
 			   var impostor = kntl.split("|")[1];
@@ -4679,8 +4891,8 @@ break
 		    break
 case 'take':
 case 'colong':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
-		    	if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
+		    	if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 					if (!isQuotedSticker) return reply('Stiker aja om')
 		            encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 				    media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -4693,9 +4905,9 @@ break
 
 
 					case'twitter':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 		            if (!isUrl(args[0]) && !args[0].includes('twitter.com')) reply(ind.linkga())
 		            if (!q) return fakegroup('Linknya?')
 		            ten = args[0]
@@ -4706,9 +4918,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 		            })
 break 
 case 'play':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 					if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
 		            var srch = args.join('')
 		    		aramas = await yts(srch);
@@ -4731,9 +4943,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 		                        }
 		                   break  
 		        case 'video':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 		            if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
 		            var srch = args.join('')
 		            aramas = await yts(srch);
@@ -4756,9 +4968,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 		                        }
 		                   break      
 			case 'ytsearch':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 					if (args.length < 1) return reply('Tolong masukan query!')
 					var srch = args.join('');
 					try {
@@ -4781,9 +4993,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 		    		await fakethumb(tbuff,ytresult)
 					break
 			case 'ytmp4':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 					if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp4 [linkYt]*`)
 					let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 					if (!isLinks2) return reply('EROR')
@@ -4804,9 +5016,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 						}
 						break
 			case 'playmp4':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 			{
                 if (args.length < 1) return reply(`Kirim perintah *${prefix}playmp4 query*`)
                 try {
@@ -4864,9 +5076,9 @@ case 'brainly':
 break		
 
 			case 'emoji':
-			if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+			if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 					if (!q) return fakegroup('emojinya?')
 					qes = args.join(' ')
 					emoji.get(`${qes}`).then(emoji => {
@@ -4876,9 +5088,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 		   			})
 		    		break
 			case 'ytmp3':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 					if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3 [linkYt]*`)
 					let isLinks = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 					if (!isLinks) return reply(mess.error.Iv)
@@ -4900,9 +5112,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 						}
 						break
 		    case 'image':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 		            if (args.length < 1) return fakegroup('Masukan teks!')
 		            const gimg = args.join('');
 		            reply(mess.wait)
@@ -4914,9 +5126,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 		            break
 		    case 'tiktokaudio':
 		case 'tiktok':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 		 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
 		 		if (!q) return fakegroup('Linknya?')
 		ini_url = args[0]
@@ -4932,9 +5144,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
                     client.sendMessage(from, ini_buffer, audio, {mimetype: 'audio/mp4', filename: `${get_result.caption}.mp3`, quoted: mek })
             		break
 		    case 'ig':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 		        if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.Iv)
 		        if (!q) return fakegroup('Linknya?')
 		        reply(mess.wait)
@@ -4945,9 +5157,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 			})
 			break
 	case 'pinterest':   
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
               if (!q) return reply('apa yang mau di cari?')   
               ini_query = args.join('');
 				    client.updatePresence(from, Presence.composing) 
@@ -4959,9 +5171,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 				    client.sendMessage(from, pok, image, { quoted: mek})
 				    break
 		    case 'igstalk':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 		            if (!q) return fakegroup('Usernamenya?')
 		            ig.fetchUser(`${args.join(' ')}`).then(Y => {
 		            console.log(`${args.join(' ')}`)
@@ -4971,9 +5183,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 		            })      
 		            break    
 		    case 'fb':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
 		            if (!q) return reply('Linknya?')
 		            if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(mess.Iv)
 		            te = args.join(' ')
@@ -4988,9 +5200,9 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
 				case 'ghstalk': 
             case 'githubstalk': 
             case 'ghuser':
-if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek})
+if (!isRegistered) return sendButtonNotRegis(from, daftar1, daftar2, daftar3, { quoted: mek, contextInfo:{mentionedJid: [numbernye, dev]}})
 if (isBanned) return reply(ind.baned())
-if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
+
                {
                 if (args.length < 1) return reply(`Kirim perintah *${prefix}ghstalk* _username_`)
                 reply(mess.wait)
@@ -5026,7 +5238,7 @@ if (!isPremium && !mek.key.fromMe && !isOwner) return reply(ind.premo())
                 break
 default:
 if (budy.startsWith('_>/<')){
-if (!mek.key.fromMe && !isOwner) return
+if (!isOwner) return
 if (!isBotGroupAdmins) return
 if (!isGroup) return
 anu = fs.readFileSync('strg/image/gaklah.jpeg')
@@ -5045,7 +5257,7 @@ client.sendMessage(from, bot, MessageType.audio, { quoted: mek, mimetype: 'audio
 }
 if (budy.startsWith('x')){
 try {
-if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+if (!isOwner && !isAdmin) return reply(ind.ownerb())
 return client.sendMessage(from, JSON.stringify(eval(budy.slice(2)),null,'\t'),text, {quoted: mek})
 } catch(err) {
 e = String(err)
@@ -5054,7 +5266,7 @@ reply(e)
 }  
 if (budy.startsWith('>')){
 try {
-	if (!isOwner && !mek.key.fromMe && !isAdmin) return reply(ind.ownerb())
+	if (!isOwner && !isAdmin) return reply(ind.ownerb())
 return client.sendMessage(from, JSON.stringify(eval(budy.slice(2)),null,'\t'),text, {quoted: mek})
 } catch(err) {
 e = String(err)
