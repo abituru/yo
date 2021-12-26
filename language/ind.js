@@ -7,11 +7,12 @@ const prefix = "#"
 exports.simplemenu = (prefix) => { 
 return `◪
 ├${prefix}ownermenu
-├${prefix}simplemenu
-├${prefix}grupsetting
+├${prefix}convertmenu
+├${prefix}gabutmenu
+├${prefix}cekmenu
+├${prefix}groupmenu
 ├${prefix}gabutmenu
 ├${prefix}lucmenu
-├${prefix}shopmenu hiiden
 ├${prefix}infomenu
 *Support Nekopoi.care*
 *Official Bot By @${numbernye.split("@")[0]}*
@@ -64,6 +65,8 @@ return `◪
 ├${prefix}addbadword
 ├${prefix}delbadword
 ├${prefix}listgroup
+├${prefix}listcmd 
+├${prefix}listrespon
 ◪
 ├${prefix}addimg
 ├${prefix}addvn
@@ -95,7 +98,6 @@ return `◪
 ├${prefix}premiumlist 
 ├${prefix}blocklist 
 ├${prefix}listbadword 
-├${prefix}listcmd 
 ├${prefix}listvn
 ├${prefix}stickerlist 
 ├${prefix}listvideo
@@ -127,6 +129,63 @@ return `◪
 ├${prefix}gc 
 ├${prefix}bukatime 
 ├${prefix}tutuptime
+*Support Nekopoi.care*
+*Official Bot By @${numbernye.split("@")[0]}*
+*Powered By @${dev.split("@")[0]}*`}
+
+exports.lucmenu = (prefix, dev, numbernye) => { 
+return `◪ 
+├${prefix}zalgo
+├${prefix}vapor
+├${prefix}detikvn
+├${prefix}detikvideo
+├${prefix}volume
+├${prefix}tourl
+├${prefix}say
+├${prefix}readmore
+├${prefix}hbd
+├${prefix}surah
+├${prefix}playstore
+├${prefix}styletext
+├${prefix}fdeface
+*Support Nekopoi.care*
+*Official Bot By @${numbernye.split("@")[0]}*
+*Powered By @${dev.split("@")[0]}*`}
+
+exports.convertmenu = (prefix, dev, numbernye) => { 
+return `◪  CONVERT IMAGE
+├${prefix}sticker
+├${prefix}toimg
+├${prefix}ocr
+◪  CONVERT AUDIO
+├${prefix}tts
+├${prefix}tomp3
+├${prefix}toptt
+├${prefix}gemes
+├${prefix}nightcore
+├${prefix}fast
+├${prefix}reverse
+├${prefix}slow
+├${prefix}trigg
+├${prefix}bass
+├${prefix}gemuk
+├${prefix}tupai
+├${prefix}tempo
+├${prefix}vibra
+├${prefix}ghost
+◪ CONVERT VIDEO 
+├${prefix}gemesvid
+├${prefix}nightcorevid
+├${prefix}fastvid
+├${prefix}reversevid
+├${prefix}slowvid
+├${prefix}triggvid
+├${prefix}bassvid
+├${prefix}gemukvid
+├${prefix}tupaivid
+├${prefix}gemukvid
+├${prefix}vibravid
+├${prefix}tempovid
 *Support Nekopoi.care*
 *Official Bot By @${numbernye.split("@")[0]}*
 *Powered By @${dev.split("@")[0]}*`}
@@ -190,7 +249,7 @@ return `◪ DATABASE
 *Powered By @${dev.split("@")[0]}*`}
 
 exports.gamemenu = (prefix, dev, numbernye) => { 
-return `◪
+return `◪ GAME
 ├${prefix}ttt
 ├${prefix}delsesi ttt
 ├${prefix}cekhistory
@@ -205,58 +264,6 @@ return `◪
 ├${prefix}judi [otw]
 ├${prefix}judi2 [otw]
 ├${prefix}level [otw]
-*Support Nekopoi.care*
-*Official Bot By @${numbernye.split("@")[0]}*
-*Powered By @${dev.split("@")[0]}*`}
-
-exports.lucmenu = (prefix, dev, numbernye) => { 
-return `◪ 
-├${prefix}sticker
-├${prefix}toimg
-├${prefix}zalgo
-├${prefix}vapor
-├${prefix}ocr
-├${prefix}detikvn
-├${prefix}detikvideo
-├${prefix}volume
-├${prefix}tourl
-├${prefix}say
-├${prefix}tts
-├${prefix}readmore
-├${prefix}hbd
-├${prefix}surah
-├${prefix}playstore
-├${prefix}styletext
-├${prefix}fdeface
-◪ CONVERT AUDIO
-├${prefix}tts
-├${prefix}tomp3
-├${prefix}toptt
-├${prefix}gemes
-├${prefix}nightcore
-├${prefix}fast
-├${prefix}reverse
-├${prefix}slow
-├${prefix}trigg
-├${prefix}bass
-├${prefix}gemuk
-├${prefix}tupai
-├${prefix}tempo
-├${prefix}vibra
-├${prefix}ghost
-◪ CONVERT VIDEO 
-├${prefix}gemesvid
-├${prefix}nightcorevid
-├${prefix}fastvid
-├${prefix}reversevid
-├${prefix}slowvid
-├${prefix}triggvid
-├${prefix}bassvid
-├${prefix}gemukvid
-├${prefix}tupaivid
-├${prefix}gemukvid
-├${prefix}vibravid
-├${prefix}tempovid
 *Support Nekopoi.care*
 *Official Bot By @${numbernye.split("@")[0]}*
 *Powered By @${dev.split("@")[0]}*`}
@@ -598,39 +605,6 @@ Kenalin nih Owner aku @${ow.split("@")[0]}
 *Official Bot By @${numbernye.split("@")[0]}*
 *Powered By @${dev.split("@")[0]}*`}
 
-exports.supportme = (player, numbernye, dev, hahh) => { 
-	return `*${hahh} @${player.split("@")[0]}*
-~ *HOT PROMO 22-31 DESEMBER* ~
-
-List Sewa Bot Harian:
-1.) 1 Hari =S&K (Free)
-2.) 2 Hari =S&K (Free)
-3.) 3 Hari =S&K (Free)
-
-*Tidak berbayar (Free)*
-
-List Sewa Bot Mingguan:
-1.) 1 Minggu =1k
-2.) 2 Minggu =3k
-3.) 3 Minggu =5k
-4.) 4 Minggu =7k
-
-*Pembayaran hanya Via Dana*
-
-List Sewa Bot Bulanan:
-1.) 1 Bulan =8k
-2.) 2 Bulan =10k
-3.) 3 Bulan =13k
-4.) 4 Bulan =15K
-
-*Pembayaran hanya Via Dana dan Pulsa*
-
-List Permanen Bot:
-25k -> Dana-Shoope-Pulsa
-*Support Nekopoi.care*
-*Official Bot By @${numbernye.split("@")[0]}*
-*Powered By @${dev.split("@")[0]}*`}
-
 exports.rules = (player, hahh, dev) => { 
 	return `Sebelum Kamu menggunakan Bot ini Baca dulu beberapa Syarat Ketentuan,Peraturan Bot dan Kebijikan Privasi
 
@@ -669,13 +643,16 @@ Peraturan: 19 Juli 2021
 *Powered By @${dev.split("@")[0]}*`}
 
 exports.gcofficial = (player, hahh) => { 
-	return `Silahkan join Group Official Null Bot,sekedar senang-senang dan mengetahui Update terbaru Dari Bot
+	return `Silahkan join Group Official Luc Bot,sekedar senang-senang dan mengetahui Update terbaru Dari Bot
 
 Group 1
-https://chat.whatsapp.com/KgJeF62iqHq1OCUVmlgvUp
+https://chat.whatsapp.com/ItWuInyvxDs1mDHUVV5xM8
 
 Group 2
-https://chat.whatsapp.com/Hl4KQuVJrZP0OtBmcdF9CV
+https://chat.whatsapp.com/CBGSIU5bKPi8NFPG532ZUE
+
+Group 3
+https://chat.whatsapp.com/CXPjrQPrn6mCU8EOnhvoSG
 
 *Jika ada informasi penting mengenai bot atau semacamnya kemungkinan akan di share di group.*
 *Support Nekopoi.care*
@@ -683,33 +660,14 @@ https://chat.whatsapp.com/Hl4KQuVJrZP0OtBmcdF9CV
 *Powered By @${dev.split("@")[0]}*`}
 
 exports.premiumbot = (player, hahh) => { 
-	return `~ *HOT PROMO 22-31 DESEMBER* ~
-
-List Sewa Bot Harian:
-1.) 1 Hari =S&K (Free)
-2.) 2 Hari =S&K (Free)
-3.) 3 Hari =S&K (Free)
-
-*Tidak berbayar (Free)*
-
-List Sewa Bot Mingguan:
-1.) 1 Minggu =1k
-2.) 2 Minggu =3k
-3.) 3 Minggu =5k
-4.) 4 Minggu =7k
-
-*Pembayaran hanya Via Dana*
-
-List Sewa Bot Bulanan:
-1.) 1 Bulan =8k
-2.) 2 Bulan =10k
-3.) 3 Bulan =13k
-4.) 4 Bulan =15K
-
-*Pembayaran hanya Via Dana dan Pulsa*
-
-List Permanen Bot:
-25k -> Dana-Shoope-Pulsa
+	return `
+-Dapatkan akses premium
+-Unlimited limit
+-Github/sc bot
+-Event berhadiah
+Jika kamu ada saran fitur bisa langsung di kasih tau ke owner.
+Terimakasih
+Silahkan klik pada "List Harga" untuk melihat list.
 *Support Nekopoi.care*
 *Official Bot By @${numbernye.split("@")[0]}*
 *Powered By @${dev.split("@")[0]}*`}

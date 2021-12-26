@@ -59,7 +59,7 @@
     "yt-search": "^2.7.6"
   },
   "scripts": {
-    "start": "pm2 start main.js --deep-monitoring --attach",
+    "start": "node main",
     "test": "supervisor main"
   },
   "repository": {
