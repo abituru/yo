@@ -34,6 +34,8 @@ return `◪
 ├${prefix}setprefix
 ├${prefix}setppbot
 ├${prefix}setlink
+├${prefix}setallmenu
+├${prefix}setmainmenu
 ◪ 
 ├${prefix}upswteks
 ├${prefix}upswimage
@@ -198,8 +200,13 @@ return `◪ DATABASE
 ├${prefix}getvideo
 ├${prefix}getpic
 ├${prefix}getbio
-◪ GABUT
 ├${prefix}fitnah 
+*Support Nekopoi.care*
+*Official Bot By @${numbernye.split("@")[0]}*
+*Powered By @${dev.split("@")[0]}*`}
+
+exports.cekmenu = (prefix, dev, numbernye) => { 
+return `◪ CEK MENU
 ├${prefix}pacaran
 ├${prefix}kangen
 ├${prefix}selingkuh 
